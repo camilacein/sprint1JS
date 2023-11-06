@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="images/cinema.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alice&family=Bungee&family=Mate+SC&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+    <title>Cinema Star</title>
+</head>
+<body>
+    <header class=" bg-red-700 flex  flex-wrap items-center h-26 space-x-96 ">
+        <div class="flex items-center mx-16 gap-4">
+            <img src="images/cinema.png" class="w-20 h-20 object-contain mx-2" alt="logo">
+            <h1 id="letra" class="text-5xl">Cinema Star</h1>
+        </div>
+            
+        
+            <nav class="flex gap-8 text-2xl font-bold" id="fuente">
+                <a href="#" class="rounded-lg bg-red-500"  >Home</a>
+                <a href="movie.html" >Movies</a>
+                <a href="#">Favs</a>
+            </nav>
+    </header>
+    <main class=" flex flex-col bg-red-900">
+        <img src="images/banner.webp" class="h-96 object-cover" alt="">
+        <p class="text-center m-10 text-xl" id="alice">En Cinema Star te damos la bienvenida a un emocionante viaje a través del mundo del cine. Somos tu destino definitivo para todo lo relacionado con películas, donde encontrarás una amplia variedad de títulos, desde clásicos atemporales hasta los últimos estrenos de la industria cinematográfica.
+            Explora nuestra extensa colección de películas que abarca todos los géneros, desde acción y aventura hasta romance y ciencia ficción. Ya seas un amante del cine, un cinéfilo empedernido o simplemente alguien en busca de una buena película para disfrutar, encontrarás algo que te atrape en nuestra selección curada.</p>
+        <div class="flex justify-center space-x-80">
+            <a id="fuente" class="text-center font-bold text-3xl hover:bg-red-500 rounded-lg" href="movie.html"><img class="w-72 h-72" object-contain" src="images/movies.png" alt="movies">Movies</a>
+            <a id="fuente" class="text-center font-bold text-3xl hover:bg-red-500 rounded-lg" href="#"><img class="w-72 h-72" src="images/favs.png" alt="favs">Favs</a>
+        </div>
+    </main>
+    <footer id="fuente" class="bg-red-700 text-center text-lg font-bold">
+        <p>Camila Cein - Mind Hub - Cohort 52</p>
+    </footer>
+    <script src="./datos.js"></script>
+    <script src="./index.js"></script>
+    <script src="./tailwind.config.js"></script>
+</body>
+</html>
