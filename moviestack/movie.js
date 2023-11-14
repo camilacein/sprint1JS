@@ -15,7 +15,7 @@ function devolverCard(parametro) {
         <h2 id="fuente" class="text-xl font-bold text-center">${parametro.title}</h2>
         <h3 id="fuente" class="text-lg font-bold text-center" >${parametro.tagline}</h3>
         <p id="alice" class="text-center text-lg whitespace-no-wrap overflow-hidden text-overflow-ellipsis max-w-200" >${parametro.overview}</p>
-        <a href="detalles.html?id=${parametro.id}" id="alice" class="bg-red-700 rounded-lg" >Ir a detalles</a>
+        <a href="detalles.html?id=${parametro.id}" id="alice" class="bg-red-700 rounded-lg" >Details</a>
     </article>`
     return card
 }
