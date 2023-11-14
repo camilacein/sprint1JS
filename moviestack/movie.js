@@ -3,7 +3,7 @@ let contenedor = document.createElement("div")
 const listaPelis = document.getElementById("lista-pelis")
 let seleccionar = document.getElementById("generos")
 let label = document.getElementById("label")
-let buscarpornombre= document.getElementById("buscar")
+let buscarpornombre = document.getElementById("buscar")
 contenedor.className = "contenedor"
 listaPelis.appendChild(contenedor)
 main.classList.add("flex", "flex-col", "items-center")
@@ -26,10 +26,10 @@ function imprimirCard(devolverCard) {
     }
 }
 
-//sprint 2 no logro que me funciona el filtro si selecciono el genero y luego escribo y me diferencia mayusculas de minusculas
+//sprint 2 
 let genres = new Set()
 for (const movie of movies) {
-    movie.genres.forEach(genre=>genres.add(genre))
+    movie.genres.forEach(genre => genres.add(genre))
 }
 genres = Array.from(genres)
 console.log(genres)
@@ -47,25 +47,27 @@ function imprimirGenero(genres) {
 }
 seleccionar.addEventListener("change", filtrarPelis)
 function filtrarPelis() {
-    let inputtext= buscarpornombre.value
+    let inputtext = buscarpornombre.value
     let generoSeleccionado = seleccionar.value
     let pelisFiltradas
-    if(generoSeleccionado==="all"){pelisFiltradas = movies.filter(movie => movie.title.includes(inputtext))
-    } else{ pelisFiltradas = movies.filter(movie =>
-        (inputtext === "" || movie.title.includes(inputtext)) &&
-        movie.genres.includes(generoSeleccionado))
+    if (generoSeleccionado === "all") {
+        pelisFiltradas = movies.filter(movie => movie.title.includes(inputtext))
+    } else {
+        pelisFiltradas = movies.filter(movie =>
+            (inputtext === "" || movie.title.includes(inputtext)) &&
+            movie.genres.includes(generoSeleccionado))
 
     }
-    
+
     mostrarPelis(pelisFiltradas)
 }
 function mostrarPelis(movies) {
-   
+
     listaPelis.innerHTML = ""
-    if(seleccionar.value== "all"){
+    if (seleccionar.value == "all") {
         imprimirCard(devolverCard)
         listaPelis.appendChild(contenedor)
-        
+
     }
     movies.forEach(movie => {
         const lista = document.createElement("li")
@@ -78,19 +80,19 @@ function mostrarPelis(movies) {
 imprimirCard(devolverCard)
 imprimirGenero(genres)
 
-let title= new Set()
+let title = new Set()
 for (const movie of movies) {
     title.add(movie.title)
 }
 console.log(title)
 buscarpornombre.addEventListener("input", filtrarNombre)
-function filtrarNombre(){
+function filtrarNombre() {
     let input = buscarpornombre.value
     let generoSeleccionado1 = seleccionar.value
-    let filtrarPelis 
-    if(generoSeleccionado1==="all"){ filtrarPelis = movies.filter(movie => movie.title.includes(input))}
-    else{filtrarPelis = movies.filter(movie => movie.title.includes(input) && movie.genres.includes(generoSeleccionado1))}
-    
+    let filtrarPelis
+    if (generoSeleccionado1 === "all") { filtrarPelis = movies.filter(movie => movie.title.includes(input)) }
+    else { filtrarPelis = movies.filter(movie => movie.title.includes(input) && movie.genres.includes(generoSeleccionado1)) }
+
     mostrarPelis(filtrarPelis)
 }
 
