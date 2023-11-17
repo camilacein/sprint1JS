@@ -1,12 +1,21 @@
+document.addEventListener('DOMContentLoaded',()=>{
 const search = location.search
 const params = new URLSearchParams(search)
 const id = params.get("id")
-
-const contenedor3 = document.getElementById("contenedor3")
-function encontrarPeliculaPorId(id) {
-  return movies.find(movie => movie.id == id);
+let url="https://moviestack.onrender.com/api/movies"
+ let api="0ff70d54-dc0b-4262-9c3d-776cb0f34dbd"
+ let opinion ={
+headers:{
+"x-api-key":api
 }
-const peliculaEncontrada = encontrarPeliculaPorId(id)
+}
+fetch(url,opinion)
+.then(pelis=>pelis.json())
+.then(data=>{
+   let movies=data.movies
+   const encontrarPeliculaPorId = movies.find((movie) => movie.id == id)
+   const contenedor3 = document.getElementById("contenedor3")
+   contenedor3.innerHTML = generarHTMLPelicula(encontrarPeliculaPorId)
 function generarHTMLPelicula(pelicula) {
   return `
     <div class="flex m-9 flex-wrap justify-center">
@@ -61,5 +70,4 @@ function generarHTMLPelicula(pelicula) {
       </table>
     </div>`;
 }
-
-contenedor3.innerHTML = generarHTMLPelicula(peliculaEncontrada)
+})})
