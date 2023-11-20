@@ -1,7 +1,7 @@
 import {crearTemplate,devolverCardFav ,devolverCard,imprimirCard,select, imprimirGenero, filtrarPelis, mostrarPelis, imprimirMovies, filtrarNombre } from "./funciones.js"
 
 let movies
-
+let allMovies
 
 let url="https://moviestack.onrender.com/api/movies"
  let api="0ff70d54-dc0b-4262-9c3d-776cb0f34dbd"
