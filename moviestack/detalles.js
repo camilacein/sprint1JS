@@ -20,7 +20,7 @@ function generarHTMLPelicula(pelicula) {
   return `
     <div class="flex m-9 flex-wrap justify-center">
     <div class="flex">
-    <img class="h-92 object-contain" src="${pelicula.image}" alt="">
+    <img class="h-92 object-contain" src="https://moviestack.onrender.com/static/${pelicula.image}" alt="">
     </div>
       
       <div class="flex flex-col md:h-1/3 md:w-1/3">
@@ -32,7 +32,7 @@ function generarHTMLPelicula(pelicula) {
     </div>
     
     <div class="flex flex-wrap justify-center">
-    <table id="alice" class="border border-collapse border-black w-[270px] h-[270px] text-2xl text-center m-9">
+    <table id="alice" class="border border-collapse border-black w-[270px] h-[270px] sm:w-[400px] sm:h-[400px]  text-2xl text-center m-9">
       <tbody>
         <tr class="border border-black">
           <td class="bg-red-700">Original Language</td>
@@ -52,7 +52,7 @@ function generarHTMLPelicula(pelicula) {
         </tr>
         </tbody>
         </table>
-          <table id="alice" class=" border border-collapse border-black w-[270px] h-[270px] text-2xl text-center m-9" >
+          <table id="alice" class=" border border-collapse border-black w-[270px] sm:w-[400px] sm:h-[400px] h-[270px] text-2xl text-center m-9" >
           <tbody>
           <tr class=" border border-black" >
           <td class="bg-red-700">Vote Average</td>
@@ -60,11 +60,11 @@ function generarHTMLPelicula(pelicula) {
         </tr>
         <tr class=" border border-black">
           <td class="bg-red-700">Budget</td>
-          <td>${pelicula.budget}</td>
+          <td>USD$ ${pelicula.budget}</td>
         </tr>
         <tr class="border border-black" >
           <td class="bg-red-700">Revenue</td>
-          <td>${pelicula.revenue}</td>
+          <td>USD$${pelicula.revenue}</td>
         </tr>
         </tbody>
       </table>

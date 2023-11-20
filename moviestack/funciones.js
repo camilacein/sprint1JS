@@ -1,7 +1,10 @@
 export function devolverCard(parametro) {
     let url= `https://moviestack.onrender.com/static/${parametro.image} `
      
-    let card = `<article class="flex flex-col items-center w-[300px] h-[650px] bg-red-500 rounded-lg">
+    let card = `<article class="article flex flex-col items-center w-[300px] h-[650px] bg-red-500 rounded-lg">
+    <button data-accion="fav" data-id="${parametro.id}" class="btn">
+    <img id="like" data-accion="fav" data-id="${parametro.id}" src="images/like.png" alt="" class="mt-2 w-[30px] h-[30px]">
+    </button>
         <img src="${url}" alt="" class="h-42 my-4 object-contein ">
         <h2 id="fuente" class="text-xl font-bold text-center">${parametro.title}</h2>
         <h3 id="fuente" class="text-lg font-bold text-center" >${parametro.tagline}</h3>
@@ -16,6 +19,7 @@ export function imprimirCard(devolverCard,contenedor) {
 
     }
 }
+
 export const imprimirMovies = ( listaPelis, contenedor ) => {
     let aux = ""
     for (const peli of listaPelis) {
@@ -77,3 +81,77 @@ export function filtrarNombre(buscarpornombre,seleccionar) {
 
     mostrarPelis(filtrarPelis)
 }
+
+
+/*export function MostrarFavoritos(peliculas,boton,id, evento){
+   let imgid= img.dataset.id
+   let buttonid= button.dataset.fav
+   let imglike= document.querySelectorAll("#like")
+   let contenedorfavs = document.getElementById("contenedor-favs")
+   console.log(imgid)
+   buttonid.addEventListener("click", ()=>{
+       if(imglike){
+    imprimirCard(devolverCard,contenedorfavs)
+    }
+      
+   })
+}*/
+
+/*let fav= button.dataset.fav*/
+
+
+
+
+
+
+
+export function devolverCardFav(parametro) {
+    let url= `https://moviestack.onrender.com/static/${parametro.image} `
+     
+    let card = `<article data-id="${parametro.id}" class="article flex flex-col items-center w-[300px] h-[650px] bg-red-500 rounded-lg">
+    <button data-fav="fav" data-id"${parametro.id}">
+    <img id="like" src="images/like.png" alt="" data-fav="fav" data-id"${parametro.id}" class="mt-2 w-[30px] h-[30px]">
+    </button>
+    
+    
+   
+        <img src="${url}" alt="" class="h-42 my-4 object-contein ">
+        <h2 id="fuente" class="text-xl font-bold text-center">${parametro.title}</h2>
+        <h3 id="fuente" class="text-lg font-bold text-center" >${parametro.tagline}</h3>
+        <p id="alice" class="text-center text-lg whitespace-no-wrap overflow-hidden text-overflow-ellipsis max-w-200" >${parametro.overview}</p>
+        <a href="./detalles.html?id=${parametro.id}" id="alice" class="bg-red-700 rounded-lg" >Details</a>
+    </article>`
+    return card
+}
+
+    /*contenedor.addEventListener("click", (evento) => {
+        const dataset = evento.target.dataset
+
+
+
+        if (dataset.accion == "fav") {
+            console.log(evento.target.dataset)
+
+
+            if (favoritas.includes(evento.target.dataset.id)) {
+                favoritas = favoritas.filter(favorita => favorita !== evento.target.dataset.id)
+            }
+            else {
+                favoritas.push(evento.target.dataset.id)
+            }
+            localStorage.setItem('favoritas', JSON.stringify(favoritas));
+        }
+        console.log(favoritas)
+
+        
+    })*/
+
+export function crearTemplate(listaMovies) {
+    let template = ""
+    for (const movie of listaMovies) {
+        template += devolverCard(movie)
+    }
+    console.log(template)
+    return template
+}
+
